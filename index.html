@@ -60,33 +60,25 @@
     </div>
   </section>
 
-  <!-- Galeria de Fotos -->
-  <section id="galeria" class="container py-5">
-    <div class="text-center mb-4">
-      <h2>Galeria de Serviços</h2>
+ <!-- Galeria de Fotos -->
+ <section id="galeria" class="container py-5">
+  <div class="text-center mb-4">
+    <h2>Nossos Serviços</h2>
+  </div>
+  <div id="carouselGaleria" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1500">
+    <div class="carousel-inner">
+      <!-- As imagens serão inseridas automaticamente via JavaScript -->
     </div>
-    <div id="carouselGaleria" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="media/foto1.jpg" class="d-block w-100" alt="Serviço 1">
-        </div>
-        <div class="carousel-item">
-          <img src="media/foto2.jpg" class="d-block w-100" alt="Serviço 2">
-        </div>
-        <div class="carousel-item">
-          <img src="media/foto3.jpg" class="d-block w-100" alt="Serviço 3">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselGaleria" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselGaleria" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Próximo</span>
-      </button>
-    </div>
-  </section>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselGaleria" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselGaleria" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Próximo</span>
+    </button>
+  </div>
+</section>
 
   <!-- Contato -->
   <section id="contato" class="container py-5 text-center">
@@ -114,5 +106,31 @@
   </footer>
 
   <script src="js/script.js"></script>
+  <script>
+    // Total de imagens que o cliente enviou
+const totalImagens = 140;
+
+// Seleciona a div onde as imagens do carrossel serão inseridas
+const galeriaInner = document.querySelector('#carouselGaleria .carousel-inner');
+
+// Loop que vai de 1 até 92 (número total de imagens)
+for (let i = 1; i <= totalImagens; i++) {
+  // Cria uma nova div com a classe 'carousel-item'
+  const div = document.createElement('div');
+  div.classList.add('carousel-item');
+
+  // A primeira imagem precisa ter a classe 'active' para aparecer ao carregar
+  if (i === 1) div.classList.add('active');
+
+  // Define o conteúdo HTML da div com a tag <img>
+  div.innerHTML = 
+    <img src="media/galeria/${i}.jpg" class="d-block w-100" alt="Foto ${i}">
+  ;
+
+  // Adiciona a div criada dentro da estrutura do carrossel
+  galeriaInner.appendChild(div);
+}
+
+  </script>
 </body>
 </html>
