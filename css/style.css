@@ -1,8 +1,15 @@
 /* style.css - Personalize aqui */
 body { font-family: Arial, sans-serif; }
 
+/* Estilo padrão para telas maiores (computadores) */
+header video {
+  height: 90vh; /* O vídeo ocupa 90% da altura da tela */
+  object-fit: cover; /* Garante que o vídeo preencha o espaço sem distorção */
+}
+
+/* Ajuste para dispositivos móveis */
 @media (max-width: 768px) {
   header video {
-    height: 80vh; /* Define a altura do vídeo como 80% da altura da tela em dispositivos móveis */
+    height: 70vh; /* O vídeo ocupa 70% da altura da tela em dispositivos móveis */
   }
 }
