@@ -1,2 +1,8 @@
 /* style.css - Personalize aqui */
 body { font-family: Arial, sans-serif; }
+
+@media (max-width: 768px) {
+  header video {
+    height: 80vh; /* Define a altura do vídeo como 80% da altura da tela em dispositivos móveis */
+  }
+}
