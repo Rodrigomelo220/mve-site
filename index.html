@@ -105,9 +105,10 @@
     <p>&copy; 2025 MVE Elétrica e Refrigeração. Todos os direitos reservados.</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>
   
-    <script>
+  <script>
     // Total de imagens que o cliente enviou
     const totalImagens = 140;
 
@@ -132,12 +133,13 @@
     }
 
     // Inicializa o carrossel manualmente após adicionar as imagens
-    setTimeout(() => {
+    document.addEventListener('DOMContentLoaded', () => {
       const carousel = new bootstrap.Carousel('#carouselGaleria', {
         interval: 2000, // Define o intervalo de 2 segundos
-        ride: 'carousel'
+        ride: 'carousel', // Ativa o carrossel automaticamente
+        pause: false // Garante que o carrossel não pause ao passar o mouse
       });
-    }, 100); // Aguarde um pequeno intervalo para garantir que o DOM foi atualizado
+    });
   </script>
 </body>
 </html>
