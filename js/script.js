@@ -1,1 +1,1 @@
-console.log('Site da MVE carregado');
+// script.js - JavaScript personalizado pode ser adicionado aqui
