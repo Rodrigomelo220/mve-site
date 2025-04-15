@@ -124,8 +124,7 @@ for (let i = 1; i <= totalImagens; i++) {
 
   // Define o conteúdo HTML da div com a tag <img>
   div.innerHTML = 
-    <img src="media/galeria/${i}.jpg" class="d-block w-100" alt="Foto ${i}">
-  ;
+    '<img src="media/galeria/' + i + '.jpg" class="d-block w-100" alt="Foto ' + i + '">';
 
   // Adiciona a div criada dentro da estrutura do carrossel
   galeriaInner.appendChild(div);
